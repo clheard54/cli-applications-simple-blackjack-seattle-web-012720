@@ -40,14 +40,14 @@ def hit?(current_total)
   if choice == 'h'
     new = deal_card
     current_total += new
+    return current_total
   elsif choice == 's'
-    current_total
+    return current_total
   else
     invalid_command
-    prompt_user
+    hit?(current_total)
   end
 end
-
 
 
 #####################################################
