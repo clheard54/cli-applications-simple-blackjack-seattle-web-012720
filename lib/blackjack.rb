@@ -56,12 +56,15 @@ end
 
 def runner
   welcome 
-  initial_total = initial_round
-  new_total = hit?(initial_total)
-  display_card_total(new_total)
-  if new_total == initial_total
-    hit?(initial_total)
-  else
-    while new_total <= 21 do
-      new_total = hit?(new_total)
-    
+  sum = initial_round
+  while sum < 21 do
+    new_total = hit?(sum)
+    display_card_total(new_total)
+    sum = new_total
+  end
+  if sum == 21
+    puts "Blackjack!"
+  elsif sum > 21
+    end_game(sum)
+  end
+end
