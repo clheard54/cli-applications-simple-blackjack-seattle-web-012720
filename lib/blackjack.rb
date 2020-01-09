@@ -63,5 +63,5 @@ def runner
     hit?(initial_total)
   else
     while new_total <= 21 do
-      newest = hit?(new_total)
+      new_total = hit?(new_total)
     
